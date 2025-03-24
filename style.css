@@ -82,12 +82,41 @@ nav button:hover{
     color: #fff;
 }
 
-nav button#menuButton{
-    display: none;
-    align-items: center;
-    justify-content: center;
+/* Toggle Menu Button */
+#menuButton {
+    display: none; /* Sembunyikan tombol di desktop */
+    background-color: transparent;
+    border: none;
     font-size: 24px;
-    padding: 7px;
+    cursor: pointer;
+    color: #1c1e53;
+}
+
+/* Style untuk tampilan mobile */
+@media screen and (max-width: 768px) {
+    #menuButton {
+        display: block; /* Tampilkan tombol di mobile */
+    }
+
+    nav ul {
+        display: none; /* Sembunyikan menu di mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 80px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    nav ul.open {
+        display: flex; /* Tampilkan menu saat tombol diklik */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
 .main{
@@ -666,4 +695,38 @@ footer .bottom .links a{
     footer {
         padding: 20px;
     }
+}
+/* Modal untuk Tools */
+#ui-ux-modal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+#ui-ux-modal .tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#ui-ux-modal .tool-item {
+    text-align: center;
+}
+
+#ui-ux-modal .tool-item img,
+#ui-ux-modal .tool-item i {
+    display: block;
+    margin: 0 auto;
+}
+
+#ui-ux-modal .tool-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
